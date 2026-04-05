@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: api
+  datasource:
+    url: jdbc:postgresql://postgres:5432/stockdb
+    username: stockuser
+    password: stockpass
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    org.flywaydb: DEBUG
+    org.springframework.jdbc.datasource.init: DEBUG
+    org.springframework.boot: DEBUG
+    com.ej.api: DEBUG
